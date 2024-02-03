@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Button from "./Button"
+import Avatar from "./Avatar"
 
 function App() {
   return (
-    <main>
-      <Button>Log in with Google</Button>
-      <Button size="lg" variant="success">Log in with Google</Button>
-      <Button size="sm" variant="warning">Log in with Google</Button>
-      <Button size="sm" variant="danger">Log in with Google</Button>
-    </main>
+    <>
+      <Avatar src="../public/images/bob.jpg" alt="Bob Ziroll" />
+      <br />
+      <Avatar>BZ</Avatar>
+      <br />
+      <Avatar />
+    </>
   )
 }
-
-export default App
+export default App;
