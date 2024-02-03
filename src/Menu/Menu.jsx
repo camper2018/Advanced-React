@@ -1,21 +1,23 @@
-import React from 'react';
+import React from "react"
+import MenuButton from "./MenuButton"
+import MenuDropdown from "./MenuDropdown"
+
+const MenuContext = React.createContext()
+
 export default function Menu({ children }) {
-    const [open, setOpen] = React.useState(true)
+    const [open, setOpen] = React.useState(false)
 
     function toggle() {
         setOpen(prevOpen => !prevOpen)
     }
 
     return (
-        <div className="menu">
-            {/* React.Children api is different from children which is an array of elements */}
-            {React.Children.map(children, (child) => {
-                // cloneElement makes copy of element just like Object.assign() and allows injecting additional props
-                return React.cloneElement(child, {
-                    open,
-                    toggle
-                })
-            })}
-        </div>
+        <MenuContext.Provider value={{open, toggle}}>
+            <div className="menu">
+                {children}
+            </div>
+        </MenuContext.Provider>
     )
 }
+
+export { MenuContext }
