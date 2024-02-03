@@ -1,16 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Avatar from "./Avatar"
+import Menu from "./Menu/Menu"
+import MenuButton from "./Menu/MenuButton"
+import MenuDropdown from "./Menu/MenuDropdown"
+import MenuItem from "./Menu/MenuItem"
 
 function App() {
+  const sports = ["Tennis", "Pickle ball", "Racquet ball", "Squash"]
+  
   return (
-    <>
-      <Avatar src="../public/images/bob.jpg" alt="Bob Ziroll" />
-      <br />
-      <Avatar>BZ</Avatar>
-      <br />
-      <Avatar />
-    </>
+    <Menu>
+      <MenuButton>Sports</MenuButton>
+      <MenuDropdown>
+        {sports.map(sport => (
+          <MenuItem key={sport}>{sport}</MenuItem>
+        ))}
+      </MenuDropdown>
+    </Menu>
   )
 }
 export default App;
