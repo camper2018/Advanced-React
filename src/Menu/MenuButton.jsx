@@ -7,7 +7,7 @@ export default function MenuButton({ children }) {
     return (
         <Button 
           onClick={toggle} 
-          aria-expanded={open} 
+          aria-expanded={open} // whether menu is expanded or not
           aria-haspopup="true"
           aria-controls={menuId}
           >{children}</Button>

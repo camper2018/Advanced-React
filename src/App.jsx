@@ -1,21 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Menu from "./Menu/Menu"
-import MenuButton from "./Menu/MenuButton"
-import MenuDropdown from "./Menu/MenuDropdown"
-import MenuItem from "./Menu/MenuItem"
+import Menu from "./Menu/index"
+
 
 function App() {
   const sports = ["Tennis", "Pickle ball", "Racquet ball", "Squash"]
   
   return (
     <Menu>
-      <MenuButton>Sports</MenuButton>
-      <MenuDropdown>
+      <Menu.Button>Sports</Menu.Button>
+      <Menu.Dropdown>
         {sports.map(sport => (
-          <MenuItem key={sport}>{sport}</MenuItem>
+          <Menu.Item key={sport}>{sport}</Menu.Item>
         ))}
-      </MenuDropdown>
+      </Menu.Dropdown>
     </Menu>
   )
 }

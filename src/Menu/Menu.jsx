@@ -6,10 +6,11 @@ const MenuContext = React.createContext()
 
 export default function Menu({ children }) {
     const [open, setOpen] = React.useState(false)
-    const menuId = React.useId();
+    const menuId = React.useId(); // to get unique id for each Menu dropdown controlled by unique menu button 
     function toggle() {
         setOpen(prevOpen => !prevOpen)
     }
+    // When building a custom drop down or any other compound DOM element, it is crucial to add aria-accessibility rules to give semantic meaning to the elements
     // Improve accessibility by:
     /* apply role = "menu" 
        aria-expanded on dropdown
