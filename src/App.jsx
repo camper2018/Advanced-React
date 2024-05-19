@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Menu from "./Menu/index"
 import Toggle from './Toggle/index'
-import {BsStar, BsStarFill} from 'react-icons/bs';
+import { BsStar, BsStarFill } from 'react-icons/bs';
 function App() {
   const sports = ["Tennis", "Pickle ball", "Racquet ball", "Squash"]
 
@@ -20,15 +20,20 @@ function App() {
       </Toggle>
       <br />
       <br />
-      <br />
-      <Menu>
-        <Menu.Button>Sports</Menu.Button>
-        <Menu.Dropdown>
-          {sports.map(sport => (
-            <Menu.Item key={sport}>{sport}</Menu.Item>
-          ))}
-        </Menu.Dropdown>
-      </Menu>
+      <Toggle>
+        <Menu>
+          <Toggle.Button>
+            <Menu.Button>Sports</Menu.Button>
+          </Toggle.Button>
+          <Toggle.On>
+            <Menu.Dropdown>
+              {sports.map(sport => (
+                <Menu.Item key={sport}>{sport}</Menu.Item>
+              ))}
+            </Menu.Dropdown>
+          </Toggle.On>
+        </Menu>
+      </Toggle>
     </>
   )
 }
