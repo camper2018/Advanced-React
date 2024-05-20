@@ -10,15 +10,15 @@ function App() {
   return (
     <>
       <Star onChange ={() => setCount(prev => prev + 1)}/>
-      {/* <br />
-        <Menu>
+      <br />
+      <Menu onOpen={() => console.log("Menu toggled")}>
           <Menu.Button>Sports</Menu.Button>
             <Menu.Dropdown>
               {sports.map(sport => (
                 <Menu.Item key={sport}>{sport}</Menu.Item>
               ))}
             </Menu.Dropdown>
-        </Menu> */}
+      </Menu>
     </>
   )
 }
